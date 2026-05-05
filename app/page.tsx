@@ -206,7 +206,7 @@ export default function PortfolioPage() {
               </div>
               <h3 className="text-white font-black uppercase text-xs mb-4 tracking-widest">IoT & Industrial</h3>
               <div className="flex flex-wrap gap-2 justify-center">
-                {['PTC ThingWorx', 'ESP32', 'Node-RED', 'MQTT', 'LoRaWAN', 'PLC Integration', 'Arduino IDE'].map((skill) => (
+                {['PTC ThingWorx', 'ESP32', 'Node-RED', 'MQTT', 'Arduino IDE'].map((skill) => (
                   <span key={skill} className="px-2 py-1 bg-slate-900/50 text-[9px] text-slate-400 border border-slate-700 rounded font-bold uppercase italic tracking-tighter">
                     {skill}
                   </span>
@@ -223,9 +223,9 @@ export default function PortfolioPage() {
                   <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
                 </svg>
               </div>
-              <h3 className="text-white font-black uppercase text-xs mb-4 tracking-widest">Web & Backend</h3>
+              <h3 className="text-white font-black uppercase text-xs mb-4 tracking-widest">Web Development</h3>
               <div className="flex flex-wrap gap-2 justify-center">
-                {['Laravel', 'JavaScript', 'Node.js', 'PostgreSQL', 'MySQL', 'Audit Trail', 'RESTful API'].map((skill) => (
+                {['Laravel', 'JavaScript', 'Node.js', 'PostgreSQL', 'MySQL', 'PHP', 'RESTful API','HTML CSS','Tailwind CSS'].map((skill) => (
                   <span key={skill} className="px-2 py-1 bg-slate-900/50 text-[9px] text-slate-400 border border-slate-700 rounded font-bold uppercase italic tracking-tighter">
                     {skill}
                   </span>
@@ -243,9 +243,9 @@ export default function PortfolioPage() {
                   <path d="M14 11l7-7" />
                 </svg>
               </div>
-              <h3 className="text-white font-black uppercase text-xs mb-4 tracking-widest">Design & Tools</h3>
+              <h3 className="text-white font-black uppercase text-xs mb-4 tracking-widest">Design</h3>
               <div className="flex flex-wrap gap-2 justify-center">
-                {['Figma', 'Roboflow', 'Canva', 'Git', 'Postman', 'MS Office'].map((skill) => (
+                {['Figma', 'Canva', 'MS Office'].map((skill) => (
                   <span key={skill} className="px-2 py-1 bg-slate-900/50 text-[9px] text-slate-400 border border-slate-700 rounded font-bold uppercase italic tracking-tighter">
                     {skill}
                   </span>
