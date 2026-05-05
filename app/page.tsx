@@ -100,10 +100,10 @@ export default function PortfolioPage() {
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div className="aspect-square bg-slate-200 rounded-3xl overflow-hidden border-2 border-white shadow-lg">
-                  <img src="/images/work/iki/iki1.JPG" alt="QA Testing" className="w-full h-full object-cover" />
+                  <img src="/images/work/iki/iki1.jpg" alt="QA Testing" className="w-full h-full object-cover" />
                 </div>
                 <div className="aspect-square bg-slate-200 rounded-3xl overflow-hidden border-2 border-white shadow-lg">
-                  <img src="/images/work/iki/iki2.JPG" alt="Team IoT Kreasi" className="w-full h-full object-cover" />
+                  <img src="/images/work/iki/iki2.jpg" alt="Team IoT Kreasi" className="w-full h-full object-cover" />
                 </div>
               </div>
             </div>
