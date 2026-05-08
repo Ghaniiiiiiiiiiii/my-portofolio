@@ -2,11 +2,23 @@ import React from 'react';
 import Link from 'next/link';
 export default function PortfolioPage() {
   return (
-    <div className="bg-slate-50 min-h-screen font-sans text-slate-900 scroll-smooth">
+      <div className="bg-slate-50 min-h-screen font-sans text-slate-900 scroll-smooth relative overflow-hidden">
 
+      <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10 overflow-hidden">
+        <div className="absolute -top-24 -right-24 w-[500px] h-[500px] bg-blue-100/50 rounded-full blur-[120px] animate-pulse"></div>
+        
+        <div className="absolute top-1/3 -left-48 w-[600px] h-[600px] bg-blue-50/80 rounded-full blur-[100px]"></div>
+        
+        <div className="absolute inset-0 opacity-[0.03]" 
+             style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54 48c2.209 0 4 1.791 4 4s-1.791 4-4 4-4-1.791-4-4 1.791-4 4-4zM6 48c2.209 0 4 1.791 4 4s-1.791 4-4 4-4-1.791-4-4 1.791-4 4-4zM30 24c2.209 0 4 1.791 4 4s-1.791 4-4 4-4-1.791-4-4 1.791-4 4-4zM6 0c2.209 0 4 1.791 4 4s-1.791 4-4 4-4-1.791-4-4 1.791-4 4-4zM54 0c2.209 0 4 1.791 4 4s-1.791 4-4 4-4-1.791-4-4 1.791-4 4-4z' fill='%232563eb' fill-opacity='1' fill-rule='evenodd'/%3E%3C/svg%3E")` }}>
+        </div>
+
+        <div className="absolute top-[10%] left-[5%] w-12 h-12 border-4 border-blue-200/30 rounded-xl rotate-12 animate-bounce transition-all duration-[5000ms]"></div>
+        <div className="absolute top-[60%] right-[10%] w-20 h-20 border-4 border-slate-200/40 rounded-full animate-pulse"></div>
+      </div>
 
       {/* --- NAVIGATION --- */}
-      <nav className="fixed w-full bg-white/90 backdrop-blur-md z-50 border-b border-slate-100">
+      <nav className="fixed w-full bg-white/70 backdrop-blur-xl z-50 border-b border-slate-100">
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
           <span className="font-extrabold text-xl tracking-tighter text-blue-600 uppercase">
             Ghani Ramadhani <span className="text-black text-md ml-2 font-black">| PORTFOLIO</span>
@@ -22,10 +34,11 @@ export default function PortfolioPage() {
       </nav>
 
       {/* --- HERO / PROFILE SECTION --- */}
-      <section id="home" className="pt-32 pb-20 px-6 max-w-6xl mx-auto">
+      <section id="home" className="pt-32 pb-20 px-6 max-w-6xl mx-auto bg-transparent relative">
         <div className="flex flex-col md:flex-row items-center gap-12">
-          <div className="w-48 h-64 md:w-64 md:h-64 relative flex-shrink">
-            <div className="w-full h-full bg-blue-100 rounded-3xl rotate-3 absolute inset-0 -z-10 border-2 border-blue-200"></div>
+          {/* Foto Profil Area */}
+          <div className="w-48 h-64 md:w-64 md:h-64 relative flex-shrink-0">
+            <div className="w-full h-full bg-blue-100 rounded-3xl rotate-3 absolute inset-0 -z-10 border-2 border-blue-200 animate-pulse"></div>
             <div className="w-full h-full bg-slate-200 rounded-3xl overflow-hidden border-2 border-white shadow-xl">
               <img 
                 src="/images/profile/profile.JPG" 
@@ -42,14 +55,15 @@ export default function PortfolioPage() {
             <p className="text-lg font-bold text-slate-500 uppercase tracking-widest mt-2">
               <span className="text-blue-600 italic">IoT & IT Enthusiast |</span> <br className="md:hidden" /> Computer Engineering Graduate
             </p>
-            <div className="mt-6 bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
+            
+            <div className="mt-6 bg-white/70 backdrop-blur-md p-6 rounded-2xl border border-white/50 shadow-sm">
               <h2 className="text-sm font-black text-blue-600 uppercase mb-2">Professional Summary</h2>
               <p className="text-slate-600 leading-relaxed text-sm md:text-base text-justify">
                 Computer Engineering graduate from IPB University with a 3.76 GPA, currently excelling as an <strong>
-                  IoT Developer Intern at PT Mitra Integrasi Informatika.</strong> Proficient in the <strong>PTC ThingWorx ecosystem,</strong>  where I actively engineer server-side Services using JavaScript, design interactive Mashups, and manage database integrity with 
-                  PostgreSQL to enhance industrial monitoring. Previously, at <strong>PT IoT Kreasi Indonesia,</strong> I demonstrated technical 
-                  precision by conducting quality assurance on 1,000+ sensor units and optimizing LoRa gateway protocols.
-                   I am skilled at bridging the gap between client operational needs and technical execution.
+                IoT Developer Intern at PT Mitra Integrasi Informatika.</strong> Proficient in the <strong>PTC ThingWorx ecosystem,</strong>  where I actively engineer server-side Services using JavaScript, design interactive Mashups, and manage database integrity with 
+                PostgreSQL to enhance industrial monitoring. Previously, at <strong>PT IoT Kreasi Indonesia,</strong> I demonstrated technical 
+                precision by conducting quality assurance on 1,000+ sensor units and optimizing LoRa gateway protocols.
+                I am skilled at bridging the gap between client operational needs and technical execution.
               </p>
             </div>
           </div>
@@ -57,21 +71,21 @@ export default function PortfolioPage() {
       </section>
 
       {/* --- WORKING EXPERIENCE SECTION --- */}
-      <section id="experience" className="py-20 bg-white border-y border-slate-100">
+      <section id="experience" className="py-12 bg-white border-y border-slate-100">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-black mb-12 uppercase tracking-tighter">Working Experience</h2>
+          <h2 className="text-3xl font-black mb-8 uppercase tracking-tighter">Working Experience</h2>
           <div className="space-y-20">
             
             {/* Experience 1: MII */}
             <div className="grid md:grid-cols-2 gap-12 items-start">
-              <div className="order-2 md:order-1 grid grid-cols-2 gap-4">
+              {/* <div className="order-2 md:order-1 grid grid-cols-2 gap-4">
                 <div className="aspect-square bg-slate-100 rounded-2xl flex items-center justify-center border-2 border-dashed border-slate-200 overflow-hidden">
                   <span className="text-[10px] text-slate-400 font-bold uppercase tracking-tighter">Dashboard Preview 1</span>
                 </div>
                 <div className="aspect-square bg-slate-100 rounded-2xl flex items-center justify-center border-2 border-dashed border-slate-200 overflow-hidden">
                   <span className="text-[10px] text-slate-400 font-bold uppercase tracking-tighter">Mashup Logic</span>
                 </div>
-              </div>
+              </div> */}
               <div className="order-1 md:order-2">
                 <span className="text-blue-600 font-bold text-xs">DEC 2025 - PRESENT</span>
                 <h3 className="text-2xl font-black mt-1 uppercase">PT Mitra Integrasi Informatika</h3>
@@ -112,84 +126,235 @@ export default function PortfolioPage() {
         </div>
       </section>
 
-      {/* --- PROJECTS SECTION (GRID CARD STYLE) --- */}
-      <section id="projects" className="py-20 max-w-6xl mx-auto px-6">
-        <h2 className="text-3xl font-black mb-16 uppercase tracking-tighter  w-fit">Project Experience</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 items-stretch">
+{/* --- PROJECTS SECTION (DARK MODE STYLE) --- */}
+      <section id="projects" className="py-12 bg-slate-900">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-3xl font-black mb-8 uppercase tracking-tighter text-white border-l-">
+            Project Experience
+          </h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 items-stretch">
 
-          {/* FINAL PROJECT */}
-          <div className="group bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-[500px]">
-            <div className="h-56 w-full overflow-hidden relative flex-shrink">
-              <img src="/images/project/final-project/fp1.jpg" className="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
-              <div className="absolute top-4 right-4 bg-blue-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">Dec 2024 - Jul 2025</div>
-            </div>
-            <div className="p-8 flex flex-col flex-grow text-justify">
-              <h3 className="text-xl font-black uppercase leading-tight min-h-[3rem]">IoT Gas Leak Detection</h3>
-              <p className="text-[10px] text-slate-400 font-bold uppercase mt-2 mb-4 line-clamp-3">Development of IoT-Based Gas Leak Detection with MQ-6 Sensor and Telegram Notification</p>
-              <div className="mt-auto space-y-6 text-left">
-                <div className="flex flex-wrap gap-2">
-                  {['NODE-RED', 'MQTT', 'ESP-32', 'MySQL'].map(t => (
-                    <span key={t} className="px-2 py-1 bg-slate-50 text-slate-500 text-[9px] font-bold rounded border border-slate-100 uppercase">{t}</span>
-                  ))}
+            {/* FINAL PROJECT */}
+            <div className="group bg-slate-800 rounded-3xl overflow-hidden border border-slate-700 shadow-2xl hover:shadow-blue-900/20 hover:-translate-y-2 transition-all duration-500 flex flex-col h-[450px]">
+              <div className="h-56 w-full overflow-hidden relative flex-shrink-0">
+                <img src="/images/project/final-project/fp1.jpg" className="w-full h-full object-cover group-hover:scale-110 transition duration-700" alt="Final Project" />
+                <div className="absolute top-4 right-4 bg-blue-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest shadow-lg">Dec 2024 - Jul 2025</div>
+              </div>
+              
+              <div className="p-8 flex flex-col flex-grow">
+                <h3 className="text-xl font-black uppercase leading-tight min-h-[3rem] text-white group-hover:text-blue-400 transition-colors">IoT Gas Leak Detection</h3>
+                <p className="text-[11px] text-slate-400 font-bold uppercase mt-2 mb-6 line-clamp-3 leading-relaxed">
+                  Development of IoT-Based Gas Leak Detection with MQ-6 Sensor and Telegram Notification for Security
+                </p>
+                
+                <div className="mt-auto space-y-6">
+                  {/* <div className="flex flex-wrap gap-2">
+                    {['NODE-RED', 'MQTT', 'ESP-32', 'MySQL'].map(t => (
+                      <span key={t} className="px-2 py-1 bg-slate-900/50 text-slate-300 text-[9px] font-bold rounded border border-slate-700 uppercase tracking-tighter italic">
+                        {t}
+                      </span>
+                    ))}
+                  </div> */}
+                  
+                  <Link href="/projects/finalproject">                  
+                    <button className="w-full py-3 bg-white text-slate-900 text-xs font-black uppercase rounded-xl hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-xl active:scale-95">
+                      View Project Details
+                    </button>
+                  </Link>        
                 </div>
-                <Link href="/projects/finalproject">                  
-                <button className="w-full py-3 bg-slate-900 text-white text-xs font-black uppercase rounded-xl hover:bg-blue-600 transition shadow-lg shadow-slate-100">
-                  View Project Details
-               </button>
-                </Link>        
-                </div>
-            </div>
-          </div>
-
-          {/* SIMONAIR */}
-          <div className="group bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-[500px]">
-            <div className="h-56 w-full overflow-hidden relative flex-shrink-0">
-              <img src="/images/project/simonair-project/s1.jpg" className="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
-              <div className="absolute top-4 right-4 bg-blue-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">Jan 2024 - Jul 2024</div>
-            </div>
-            <div className="p-8 flex flex-col flex-grow text-justify">
-              <h3 className="text-xl font-black uppercase leading-tight min-h-[3rem]">SIMONAIR 3.0 – Water Quality</h3>
-              <p className="text-[10px] text-slate-400 font-bold uppercase mt-2 mb-4 line-clamp-3">IoT Based Multi-monitoring water quality for Red Tilapia, Silver Arowana, and Discus</p>
-              <div className="mt-auto space-y-6 text-left">
-                <div className="flex flex-wrap gap-2">
-                  {['Tailwind', 'ESP-32', 'Arduino IDE', 'MySQL'].map(t => (
-                    <span key={t} className="px-2 py-1 bg-slate-50 text-slate-500 text-[9px] font-bold rounded border border-slate-100 uppercase">{t}</span>
-                  ))}
-                </div>
-                <Link href="/projects/simonairproject">
-                <button className="w-full py-3 bg-slate-900 text-white text-xs font-black uppercase rounded-xl hover:bg-blue-600 transition shadow-lg shadow-slate-100">View Details</button>
-              </Link>
               </div>
             </div>
-          </div>
 
-          {/* CURUG PROJECT */}
-          <div className="group bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-[500px]">
-            <div className="h-56 w-full overflow-hidden relative flex-shrink-0">
-              <img src="/images/project/curug-project/c1.jpg" className="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
-              <div className="absolute top-4 right-4 bg-blue-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">Aug 2023 - Dec 2023</div>
-            </div>
-            <div className="p-8 flex flex-col flex-grow text-justify">
-              <h3 className="text-xl font-black uppercase leading-tight min-h-[3rem]">Automatic Lighting & Voice</h3>
-              <p className="text-[10px] text-slate-400 font-bold uppercase mt-2 mb-4 line-clamp-3">Voice Recording and Motion-Based Automatic Lighting for Curug Cikoneng</p>
-              <div className="mt-auto space-y-6 text-left">
-                <div className="flex flex-wrap gap-2">
-                  {['ARDUINO IDE', 'ESP-32', 'Blynk'].map(t => (
-                    <span key={t} className="px-2 py-1 bg-slate-50 text-slate-500 text-[9px] font-bold rounded border border-slate-100 uppercase">{t}</span>
-                  ))}
+            {/* SIMONAIR */}
+            <div className="group bg-slate-800 rounded-3xl overflow-hidden border border-slate-700 shadow-2xl hover:shadow-blue-900/20 hover:-translate-y-2 transition-all duration-500 flex flex-col h-[450px]">
+              <div className="h-56 w-full overflow-hidden relative flex-shrink-0">
+                <img src="/images/project/simonair-project/s1.jpg" className="w-full h-full object-cover group-hover:scale-110 transition duration-700" alt="Simonair Project" />
+                <div className="absolute top-4 right-4 bg-blue-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest shadow-lg">Jan 2024 - Jul 2024</div>
+              </div>
+              
+              <div className="p-8 flex flex-col flex-grow">
+                <h3 className="text-xl font-black uppercase leading-tight min-h-[3rem] text-white group-hover:text-blue-400 transition-colors">SIMONAIR 3.0 – Water Quality</h3>
+                <p className="text-[11px] text-slate-400 font-bold uppercase mt-2 mb-6 line-clamp-3 leading-relaxed">
+                  IoT Based Multi-monitoring water quality for Red Tilapia, Silver Arowana, and Discus Fish Species
+                </p>
+                
+                <div className="mt-auto space-y-6">
+                  {/* <div className="flex flex-wrap gap-2">
+                    {['Tailwind', 'ESP-32', 'Arduino', 'MySQL'].map(t => (
+                      <span key={t} className="px-2 py-1 bg-slate-900/50 text-slate-300 text-[9px] font-bold rounded border border-slate-700 uppercase tracking-tighter italic">
+                        {t}
+                      </span>
+                    ))}
+                  </div> */}
+                  
+                  <Link href="/projects/simonairproject">
+                    <button className="w-full py-3 bg-white text-slate-900 text-xs font-black uppercase rounded-xl hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-xl active:scale-95">
+                      View Project Details
+                    </button>
+                  </Link>
                 </div>
-                <Link href="/projects/curugproject">
-                <button className="w-full py-3 bg-slate-900 text-white text-xs font-black uppercase rounded-xl hover:bg-blue-600 transition shadow-lg shadow-slate-100">View Details</button>
-                </Link>
               </div>
             </div>
-          </div>
 
+            {/* CURUG PROJECT */}
+            <div className="group bg-slate-800 rounded-3xl overflow-hidden border border-slate-700 shadow-2xl hover:shadow-blue-900/20 hover:-translate-y-2 transition-all duration-500 flex flex-col h-[450px]">
+              <div className="h-56 w-full overflow-hidden relative flex-shrink-0">
+                <img src="/images/project/curug-project/c1.jpg" className="w-full h-full object-cover group-hover:scale-110 transition duration-700" alt="Curug Project" />
+                <div className="absolute top-4 right-4 bg-blue-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest shadow-lg">Aug 2023 - Dec 2023</div>
+              </div>
+              
+              <div className="p-8 flex flex-col flex-grow">
+                <h3 className="text-xl font-black uppercase leading-tight min-h-[3rem] text-white group-hover:text-blue-400 transition-colors">Automatic Lighting & Voice</h3>
+                <p className="text-[11px] text-slate-400 font-bold uppercase mt-2 mb-6 line-clamp-3 leading-relaxed">
+                  Voice Recording and Motion-Based Automatic Lighting Solution for Curug Cikoneng Hospitality
+                </p>
+                
+                <div className="mt-auto space-y-6">
+                  {/* <div className="flex flex-wrap gap-2">
+                    {['ARDUINO IDE', 'ESP-32', 'Blynk'].map(t => (
+                      <span key={t} className="px-2 py-1 bg-slate-900/50 text-slate-300 text-[9px] font-bold rounded border border-slate-700 uppercase tracking-tighter italic">
+                        {t}
+                      </span>
+                    ))}
+                  </div> */}
+                  
+                  <Link href="/projects/curugproject">
+                    <button className="w-full py-3 bg-white text-slate-900 text-xs font-black uppercase rounded-xl hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-xl active:scale-95">
+                      View Project Details
+                    </button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+      
+      {/* --- PUBLICATION SECTION (LIST STYLE) --- */}
+      <section id="publications" className="py-12 bg-white border-y border-slate-100">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="flex items-center justify-between mb-8">
+            <h2 className="text-3xl font-black uppercase tracking-tighter">Publications</h2>
+            <div className="h-[2px] flex-1 bg-slate-100">
+          </div>          
+        </div>
+
+          <div className="space-y-6">
+            {/* Publication Item 1 */}
+            <div className="group p-8 bg-slate-50 rounded-3xl border border-transparent hover:border-blue-600 hover:bg-white transition-all duration-300">
+              <div className="flex flex-col md:flex-row md:items-start justify-between gap-6">
+                <div className="flex-1 space-y-4">
+                  <div className="flex items-center gap-4">
+                    <span className="text-blue-600 font-black text-[10px] uppercase tracking-widest italic">14 July, 2025</span>
+                    <span className="w-1 h-1 bg-slate-300 rounded-full"></span>
+                    <span className="text-slate-400 font-bold text-[10px] uppercase tracking-widest">Final Project</span>
+                  </div>
+                  {/* Title */}
+                  <a 
+                    href="https://repository.ipb.ac.id/handle/123456789/163998" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="block group-hover:text-blue-600 transition-colors"
+                  >
+                    <h3 className="text-xl md:text-2xl font-black uppercase tracking-tight leading-tight">
+                      Development of IoT-Based Gas Leak Detection Tool with MQ-6 Sensor and Telegram Notification for Security
+                    </h3>
+                  </a>
+                </div>
+                {/* Action Link Button */}
+                <div className="flex-shrink-0">
+                  <a 
+                    href="https://repository.ipb.ac.id/handle/123456789/163998" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-3 py-3 bg-white border border-slate-200 rounded-2xl text-[10px] font-black uppercase tracking-widest text-slate-900 group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600 transition-all shadow-sm"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Publication Item 2 */}
+            <div className="group p-8 bg-slate-50 rounded-3xl border border-transparent hover:border-blue-600 hover:bg-white transition-all duration-300">
+              <div className="flex flex-col md:flex-row md:items-start justify-between gap-6">
+                <div className="flex-1 space-y-4">
+                  <div className="flex items-center gap-4">
+                    <span className="text-blue-600 font-black text-[10px] uppercase tracking-widest italic">28 April, 2024</span>
+                    <span className="w-1 h-1 bg-slate-300 rounded-full"></span>
+                    <span className="text-slate-400 font-bold text-[10px] uppercase tracking-widest">Journal</span>
+                  </div>
+                  {/* Title */}
+                  <a 
+                    href="https://pdfs.semanticscholar.org/18de/a3a572d79fef628148a690b9ba08b2ed7fe3.pdf" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="block group-hover:text-blue-600 transition-colors"
+                  >
+                    <h3 className="text-xl md:text-2xl font-black uppercase tracking-tight leading-tight">
+                      SOUND RECORD“SELAMAT DATANG DI CURUG CIKONENG” DAN LAMPU OTOMATIS BERBASIS MOTION GESTURE
+                    </h3>
+                  </a>
+                </div>
+                {/* Action Link Button */}
+                <div className="flex-shrink-0">
+                  <a 
+                    href="https://pdfs.semanticscholar.org/18de/a3a572d79fef628148a690b9ba08b2ed7fe3.pdf" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-3 py-3 bg-white border border-slate-200 rounded-2xl text-[10px] font-black uppercase tracking-widest text-slate-900 group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600 transition-all shadow-sm"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            {/* Publication Item 3 */}
+            <div className="group p-8 bg-slate-50 rounded-3xl border border-transparent hover:border-blue-600 hover:bg-white transition-all duration-300">
+              <div className="flex flex-col md:flex-row md:items-start justify-between gap-6">
+                <div className="flex-1 space-y-4">
+                  <div className="flex items-center gap-4">
+                    <span className="text-blue-600 font-black text-[10px] uppercase tracking-widest italic">09 June, 2024</span>
+                    <span className="w-1 h-1 bg-slate-300 rounded-full"></span>
+                    <span className="text-slate-400 font-bold text-[10px] uppercase tracking-widest">Journal</span>
+                  </div>
+                  {/* Title */}
+                  <a 
+                    href="https://journal.pubmedia.id/index.php/pjise/article/view/2613" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="block group-hover:text-blue-600 transition-colors"
+                  >
+                    <h3 className="text-xl md:text-2xl font-black uppercase tracking-tight leading-tight">
+                      Analisis Kerentanan WordPress dengan WPScan dan Teknik Mitigasi
+                    </h3>
+                  </a>
+                </div>
+                {/* Action Link Button */}
+                <div className="flex-shrink-0">
+                  <a 
+                    href="https://journal.pubmedia.id/index.php/pjise/article/view/2613" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-3 py-3 bg-white border border-slate-200 rounded-2xl text-[10px] font-black uppercase tracking-widest text-slate-900 group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600 transition-all shadow-sm"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
         </div>
       </section>
 
+
         {/* --- SKILLS SECTION --- */}
-      <section id="skills" className="py-20 bg-slate-900 text-white px-6">
+      <section id="skills" className="py-12 bg-slate-900 text-white px-6">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-black mb-12 uppercase tracking-tighter text-center">Skills Competencies</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -258,7 +423,7 @@ export default function PortfolioPage() {
       </section>
 
             {/* --- CONTACT SECTION --- */}
-      <section id="contact" className="py-24 bg-white px-6 border-t border-slate-100 text-center">
+      <section id="contact" className="py-12 bg-white px-6 border-t border-slate-100 text-center">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl font-black uppercase tracking-tighter mb-4">Contact Me</h2>
           <p className="text-slate-500 mb-12 font-medium">
