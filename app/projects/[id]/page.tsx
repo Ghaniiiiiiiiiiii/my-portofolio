@@ -22,7 +22,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
       tech: ['NODE-RED', 'MQTT', 'ESP-32', 'TELEGRAM-BOT', 'MySQL', 'Laravel', 'Internet Of Things (IoT)','Sensor MQ-6','Dashboard Monitoring','Gas Leak Detection'],
       landscapeImage: "/images/project/final-project/fp3.png",
       images: ["/images/project/final-project/fp1.jpg", "/images/project/final-project/fp2.jpg"],
-      pdfLink: "/documents/gas-leak-report.pdf", 
+      pdfLink: "https://repository.ipb.ac.id/handle/123456789/163998", 
       features: [
         "Real-time gas concentration monitoring via Laravel dashboard.",
         "Automated Telegram Bot alerts for immediate leak notifications.",
